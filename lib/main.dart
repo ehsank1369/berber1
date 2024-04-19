@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       
       home: Directionality(textDirection: TextDirection.rtl, child: Scaffold(
-        backgroundColor: Color(0xff25262A),
+        backgroundColor: Colors.amber,
         body: SafeArea(child: InformationAccount()),
       ),)
     );
