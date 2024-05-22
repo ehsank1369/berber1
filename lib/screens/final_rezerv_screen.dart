@@ -10,7 +10,7 @@ class FinalRezervScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBarWidget(),
+      appBar: appBarWidget(context),
       backgroundColor: CustomColors.blackColor,
       body: SafeArea(
           child: SingleChildScrollView(

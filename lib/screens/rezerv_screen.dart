@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_barber_04/contants/colors.dart';
+import 'package:flutter_barber_04/screens/date_time_screen.dart';
 
 class RezervScreen extends StatelessWidget {
   const RezervScreen({super.key});
@@ -18,54 +19,61 @@ class RezervScreen extends StatelessWidget {
           const SliverPadding(
             padding: EdgeInsets.only(bottom: 50),
           ),
-          getBottomsheet()
+          getBottomsheet(context)
         ],
       ),
     );
   }
 
-  SliverToBoxAdapter getBottomsheet() {
+  Widget getBottomsheet(BuildContext context) {
     return SliverToBoxAdapter(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 17),
-        child: Container(
-          height: 78,
-          width: 394,
-          decoration: const BoxDecoration(
-            color: CustomColors.greyBlackColor,
-            borderRadius: BorderRadius.all(
-              Radius.circular(50),
+        child: GestureDetector(
+          onTap: () {
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+              return const DateTimeScreen();
+            }));
+          },
+          child: Container(
+            height: 78,
+            width: 394,
+            decoration: const BoxDecoration(
+              color: CustomColors.greyBlackColor,
+              borderRadius: BorderRadius.all(
+                Radius.circular(50),
+              ),
             ),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 19),
-            child: Row(
-              children: [
-                Image.asset('assets/images/back_arrow_group.png'),
-                const Spacer(),
-                const Text(
-                  'انتخاب تاریخ',
-                  style: TextStyle(
-                      color: CustomColors.whiteColor,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold),
-                ),
-                const Spacer(),
-                Container(
-                  height: 56,
-                  width: 56,
-                  decoration: const BoxDecoration(
-                    color: CustomColors.greenColor,
-                    shape: BoxShape.circle,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 19),
+              child: Row(
+                children: [
+                  Image.asset('assets/images/back_arrow_group.png'),
+                  const Spacer(),
+                  const Text(
+                    'انتخاب تاریخ',
+                    style: TextStyle(
+                        color: CustomColors.whiteColor,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold),
                   ),
-                  child: Center(
-                    child: Image.asset(
-                      'assets/images/back_arrow.png',
-                      color: CustomColors.blackColor,
+                  const Spacer(),
+                  Container(
+                    height: 56,
+                    width: 56,
+                    decoration: const BoxDecoration(
+                      color: CustomColors.greenColor,
+                      shape: BoxShape.circle,
+                    ),
+                    child: Center(
+                      child: Image.asset(
+                        'assets/images/back_arrow.png',
+                        color: CustomColors.blackColor,
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

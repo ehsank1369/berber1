@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_barber_04/contants/colors.dart';
+import 'package:flutter_barber_04/screens/rezerv_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -63,23 +64,31 @@ class GetMainColumn1 extends StatelessWidget {
                 Positioned(
                   bottom: 0,
                   left: 0,
-                  child: ClipRRect(
-                    borderRadius: const BorderRadius.all(
-                      Radius.circular(25),
-                    ),
-                    child: BackdropFilter(
-                      filter: ImageFilter.blur(sigmaX: 40, sigmaY: 40),
-                      child: Container(
-                        height: 64,
-                        width: 64,
-                        decoration: const BoxDecoration(
-                          color: Colors.transparent,
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(25),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (context) {
+                        return const RezervScreen();
+                      }));
+                    },
+                    child: ClipRRect(
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(25),
+                      ),
+                      child: BackdropFilter(
+                        filter: ImageFilter.blur(sigmaX: 40, sigmaY: 40),
+                        child: Container(
+                          height: 64,
+                          width: 64,
+                          decoration: const BoxDecoration(
+                            color: Colors.transparent,
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(25),
+                            ),
                           ),
-                        ),
-                        child: Center(
-                          child: Image.asset('assets/images/back_arrow.png'),
+                          child: Center(
+                            child: Image.asset('assets/images/back_arrow.png'),
+                          ),
                         ),
                       ),
                     ),
@@ -242,9 +251,9 @@ class GetHeader extends StatelessWidget {
               ),
               child: const Center(
                 child: Text(
-                  '!به کارینو خوش اومدی ',
+                  'به کارینو خوش اومدی ',
                   style: TextStyle(
-                      fontSize: 13,
+                      fontSize: 14,
                       color: CustomColors.blackColor,
                       fontWeight: FontWeight.bold),
                 ),
@@ -258,18 +267,18 @@ class GetHeader extends StatelessWidget {
                 const Text(
                   'سلام حسین',
                   style: TextStyle(
-                    color: CustomColors.whiteColor,
-                    fontSize: 13,
-                  ),
+                      color: CustomColors.whiteColor,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400),
                 ),
                 Row(
                   children: [
                     const Text(
                       'لنگرود، اقدسیه',
                       style: TextStyle(
-                        color: CustomColors.greyColor,
-                        fontSize: 13,
-                      ),
+                          color: CustomColors.greyColor,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400),
                     ),
                     const SizedBox(width: 3),
                     Image.asset('assets/images/location.png')
@@ -282,9 +291,18 @@ class GetHeader extends StatelessWidget {
               height: 55,
               width: 55,
               decoration: const BoxDecoration(
-                  color: Colors.amber,
-                  borderRadius: BorderRadius.all(Radius.circular(50))),
-            )
+                color: Colors.blue,
+                borderRadius: BorderRadius.all(
+                  Radius.circular(82),
+                ),
+              ),
+              child: const CircleAvatar(
+                maxRadius: 82,
+                backgroundImage: AssetImage(
+                  'assets/images/avatar.png',
+                ),
+              ),
+            ),
           ],
         ),
       ),

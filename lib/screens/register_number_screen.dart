@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:flutter_barber_04/contants/colors.dart';
 import 'package:flutter_barber_04/widget/appbar.dart';
 
@@ -10,8 +10,8 @@ class RegisterNumberScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBarWidget(),
-      //backgroundColor: CustomColors.blackColor,
+      appBar: appBarWidget(context),
+      backgroundColor: CustomColors.blackColor,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.only(left: 30, right: 30, top: 10),
@@ -24,7 +24,7 @@ class RegisterNumberScreen extends StatelessWidget {
                 child: Image.asset('assets/images/icon_logo.png'),
               ),
               const Padding(
-                padding: const EdgeInsets.only(top: 32),
+                padding: EdgeInsets.only(top: 32),
                 child: Text(
                   'ورود به کارینو',
                   style: TextStyle(
@@ -34,7 +34,7 @@ class RegisterNumberScreen extends StatelessWidget {
                 ),
               ),
               const Padding(
-                padding: const EdgeInsets.only(top: 32),
+                padding: EdgeInsets.only(top: 32),
                 child: Text(
                   'برای دریافت پیشنهادهای خاص و تجربه بهتر رزرو ابتدا در کارینو ثبت نام کن.',
                   textDirection: TextDirection.rtl,
@@ -56,13 +56,14 @@ class RegisterNumberScreen extends StatelessWidget {
                       fontSize: 23,
                       color: CustomColors.whiteColor,
                     ),
+                    //   maxLength: 11,
                     decoration: const InputDecoration(
                         label: Text(
                           'شماره موبایل',
                           style: TextStyle(
                             fontWeight: FontWeight.w700,
-                            fontSize: 14,
-                            color: CustomColors.greyColor,
+                            fontSize: 16,
+                            color: CustomColors.whiteColor,
                           ),
                         ),
                         enabledBorder: OutlineInputBorder(

@@ -20,7 +20,7 @@ class _DateTimeScreenState extends State<DateTimeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBarWidget(),
+      appBar: appBarWidget(context),
       backgroundColor: CustomColors.blackColor,
       body: SafeArea(
           child: Center(

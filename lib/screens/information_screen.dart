@@ -9,7 +9,7 @@ class InformationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: CustomColors.blackColor,
-      appBar: appBarWidget(),
+      appBar: appBarWidget(context),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.only(left: 45, right: 45, top: 8),
@@ -27,7 +27,7 @@ class InformationScreen extends StatelessWidget {
                 ),
               ),
               const Padding(
-                padding: EdgeInsets.only(top: 70, bottom: 10),
+                padding: EdgeInsets.only(top: 50, bottom: 10),
                 child: Text(
                   'به کمک کارینو نیاز دارید؟',
                   style: TextStyle(
@@ -45,7 +45,7 @@ class InformationScreen extends StatelessWidget {
                     color: CustomColors.greyColor),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 60),
+                padding: const EdgeInsets.only(top: 50),
                 child: Row(
                   children: [
                     SizedBox(
@@ -93,7 +93,7 @@ class InformationScreen extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 60),
+                padding: const EdgeInsets.only(top: 50),
                 child: Row(
                   children: [
                     SizedBox(
@@ -117,7 +117,7 @@ class InformationScreen extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 60),
+                padding: const EdgeInsets.only(top: 50),
                 child: Row(
                   children: [
                     SizedBox(

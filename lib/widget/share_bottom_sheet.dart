@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_barber_04/contants/colors.dart';
+import 'package:flutter_barber_04/screens/final_rezerv_screen.dart';
 
 class ShareBottomSheet extends StatefulWidget {
   const ShareBottomSheet({this.controller, super.key});
@@ -106,33 +107,41 @@ class _ShareBottomSheetState extends State<ShareBottomSheet> {
             ),
             SliverPadding(padding: EdgeInsets.only(bottom: 150)),
             SliverToBoxAdapter(
-              child: Container(
-                margin: EdgeInsets.symmetric(horizontal: 5),
-                height: 87,
-                width: 420,
-                decoration: const BoxDecoration(
-                  color: CustomColors.blackColor,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(50),
-                  ),
-                ),
-                child: Center(
-                  child: Container(
-                    height: 56,
-                    width: 233,
-                    decoration: const BoxDecoration(
-                      color: CustomColors.greenColor,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(50),
-                      ),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) {
+                    return const FinalRezervScreen();
+                  }));
+                },
+                child: Container(
+                  margin: EdgeInsets.symmetric(horizontal: 5),
+                  height: 87,
+                  width: 420,
+                  decoration: const BoxDecoration(
+                    color: CustomColors.blackColor,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(50),
                     ),
-                    child: const Center(
-                      child: Text(
-                        'ثبت',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: CustomColors.blackColor,
-                            fontSize: 20),
+                  ),
+                  child: Center(
+                    child: Container(
+                      height: 56,
+                      width: 233,
+                      decoration: const BoxDecoration(
+                        color: CustomColors.greenColor,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(50),
+                        ),
+                      ),
+                      child: const Center(
+                        child: Text(
+                          'ثبت',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: CustomColors.blackColor,
+                              fontSize: 20),
+                        ),
                       ),
                     ),
                   ),
